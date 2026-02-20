@@ -54,23 +54,20 @@ A full-stack Task Management application built with MongoDB, Express.js, React, 
 
 | Signup Page |
 |------------|
-| <img src="screenshots/login.png" width="1000"> |
+| <img src="images/Signup.png" width="1000"> |
 
 | Login Page |
 |----------------|
-| <img src="screenshots/dashboard.png" width="1000"> |
+| <img src="images/Login.png" width="1000"> |
 
 | Dashboard |
 |------------|
-| <img src="screenshots/tasks.png" width="1000"> |
+| <img src="images/Dashboard.png" width="1000"> |
 
 | Create Task |
 |-------------|
-| <img src="screenshots/create-task.png" width="1000"> |
+| <img src="images/Task.png" width="1000"> |
 
-*Note: Add your screenshots in a `screenshots` folder and update the paths above*
-
----
 
 ## 🚀 Quick Start
 
@@ -88,7 +85,7 @@ cd backend
 npm install
 
 # 3. Create .env file in backend folder
-# Add these variables (see Environment Variables section below)
+Add these variables (see Environment Variables section below)
 
 # 4. Start Backend Server
 npm run dev
@@ -98,42 +95,17 @@ cd frontend
 npm install
 
 # 6. Create .env file in frontend folder
-# Add this variable: VITE_API_URL=http://localhost:5000/api
+Add this variable: VITE_API_URL=http://localhost:5000/api
 
 # 7. Start Frontend Server
 npm run dev
 
-Access your local app:
+# 8. Access your local app:
 
 Frontend: http://localhost:5173
 Backend: http://localhost:5000
 
-#🔧 Environment Variables
-
-Backend (.env in backend folder)
-
-PORT=5000
-MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/taskmanager
-JWT_SECRET=your_random_jwt_secret_key_here
-NODE_ENV=development
-CORS_ORIGIN=http://localhost:5173
-
-
-Frontend (.env in frontend folder)
-
-VITE_API_URL=http://localhost:5000/api
-Production Variables
-Render (Backend)
-
-MONGODB_URI=your_production_mongodb_url
-JWT_SECRET=your_production_jwt_secret
-NODE_ENV=production
-CORS_ORIGIN=http://localhost:5173,https://task-management-web-app-puce.vercel.app
-Vercel (Frontend)
-
-VITE_API_URL=https://task-management-backend-q4y1.onrender.com/api
-
-🚢 Deployment
+## 🚢 Deployment
 
 Backend (Render)
 Push code to GitHub
@@ -148,7 +120,7 @@ Set root directory: frontend
 Add environment variable: VITE_API_URL
 Deploy
 
-📞 Contact
+## 📞 Contact
 Sandeep Gangwar
 
 GitHub: @Sandeep-gangwar
