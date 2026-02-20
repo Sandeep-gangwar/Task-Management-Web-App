@@ -76,31 +76,31 @@ Simply visit: **https://task-management-web-app-puce.vercel.app**
 
 ### Option 2: Run Locally
 
-# 1. Clone the repository
+### 1. Clone the repository
 git clone https://github.com/Sandeep-gangwar/Task-Management-Web-App.git
 cd Task-Management-Web-App
 
-# 2. Setup Backend
+### 2. Setup Backend
 cd backend
 npm install
 
-# 3. Create .env file in backend folder
-Add these variables (see Environment Variables section below)
+### 3. Create .env file in backend folder
+Add the variables
 
-# 4. Start Backend Server
+### 4. Start Backend Server
 npm run dev
 
-# 5. Setup Frontend (Open a new terminal)
+### 5. Setup Frontend (Open a new terminal)
 cd frontend
 npm install
 
-# 6. Create .env file in frontend folder
+### 6. Create .env file in frontend folder
 Add this variable: VITE_API_URL=http://localhost:5000/api
 
-# 7. Start Frontend Server
+### 7. Start Frontend Server
 npm run dev
 
-# 8. Access your local app:
+### 8. Access your local app:
 
 Frontend: http://localhost:5173
 Backend: http://localhost:5000
