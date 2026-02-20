@@ -13,6 +13,9 @@ function createApp({ corsOrigin }) {
   const app = express();
   const isProduction = process.env.NODE_ENV === "production";
 
+  // Handle if corsOrigin is passed as array from env.js
+  const originString = Array.isArray(corsOrigin) ? corsOrigin.join(',') : corsOrigin;
+
   if (isProduction) {
     app.set("trust proxy", 1);
   }
@@ -24,7 +27,7 @@ function createApp({ corsOrigin }) {
         defaultSrc: ["'self'"],
         styleSrc: ["'self'", "'unsafe-inline'"],
         scriptSrc: ["'self'"],
-        connectSrc: ["'self'", corsOrigin]
+        connectSrc: ["'self'", originString]
       }
     } : false
   }));
@@ -34,14 +37,22 @@ function createApp({ corsOrigin }) {
   // Enhanced CORS configuration for production
   const corsOptions = {
     origin: function(origin, callback) {
-      const allowedOrigins = corsOrigin.split(',').map(o => o.trim());
+      const allowedOrigins = originString.split(',').map(o => o.trim());
+      
       if (isProduction) {
-        if (!origin || allowedOrigins.includes(origin)) {
+        // Allow requests with no origin (like mobile apps, Postman)
+        if (!origin) {
+          return callback(null, true);
+        }
+        
+        if (allowedOrigins.includes(origin)) {
           callback(null, true);
         } else {
+          console.warn(`CORS blocked: ${origin} not in [${allowedOrigins.join(', ')}]`);
           callback(new Error('Not allowed by CORS'), false);
         }
       } else {
+        // In development, allow all origins
         callback(null, true);
       }
     },
