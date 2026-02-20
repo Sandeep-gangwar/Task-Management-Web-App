@@ -1,95 +1,150 @@
-# ***Tasky***
+# MERN Stack Task Manager App
 
-## **_Table of Contents_**
-- [Introduction](#introduction)
-  - [Purpose](#purpose)
-  - [About the Customer](#about-the-customer)
-- [Tech Stack Notice](#tech-stack-notice)
-  - [MongoDB](#mongodb)
-  - [Express](#express)
-  - [React + Vite](#react-vite)
-  - [Node](#node-js)
-- [Getting Started](#getting-started)
-- [Key Docs](#key-docs)
+A full-stack Task Manager application built with MongoDB, Express.js, React, and Node.js. Features user authentication, task management, notes, todos, and calendar integration.
 
-## **Introduction**
-### Purpose
-  The purpose of this project is to...
+---
 
-  For further information please see the [project_overview.md](docs/project_overview/project_overview.md) guide.
+## 📋 Table of Contents
+- [Live Demo](#-live-demo)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Screenshots](#-screenshots)
+- [Quick Start](#-quick-start)
+- [Project Structure](#-project-structure)
+- [Application Flow](#-application-flow)
+- [API Flowchart](#-api-flowchart)
+- [Environment Variables](#-environment-variables)
+- [Deployment](#-deployment)
+- [Contact](#-contact)
 
-### About the Customer
-  Sample Customer Information...
+---
 
-## **Tech Stack Notice**
-  For the duration of this project, development will be done using the MERN tech stack — MongoDB, Express.js, React, and Node.js. All architectural decisions, feature implementations, and contributions should align with this stack to ensure consistency, maintainability, and efficient collaboration across the team.
+## 🌐 Live Demo
 
-### ***MongoDB***
-  MongoDB info and docs...
-  - [MongoDB Cheat Sheet](https://www.geeksforgeeks.org/mongodb/mongodb-cheat-sheet/)
-  - [Learn MongoDB](https://www.w3schools.com/mongodb/index.php)
-    
-  Installation Commands
-  ```bash
-  ```
-  Common Commands
-  ```bash
-  ```
+| Component | URL | Status |
+|-----------|-----|--------|
+| **Frontend** | [https://mern-stack-task-manager-app.vercel.app](https://mern-stack-task-manager-app.vercel.app) | 🟢 Live |
+| **Backend API** | [https://task-manager-backend-wm5h.onrender.com](https://task-manager-backend-wm5h.onrender.com) | 🟢 Live |
+| **GitHub Repo** | [https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App](https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App) | 📦 Code |
 
-### ***Express***
-  Express info and docs...
-  - [Learn Express](https://expressjs.com/en/starter/installing.html)
+---
 
-   Installation Commands
-  ```bash
-  ```
-  Common Commands
-  ```bash
-  ```
+## ✨ Features
 
-### ***React Vite***
-  React info and docs...
-  - [Learn React](https://react.dev/learn)
-  - [Vite Guide](https://vite.dev/guide/)
+| Category | Features |
+|----------|----------|
+| **Authentication** | Local login, Google OAuth, Facebook OAuth, Password Reset |
+| **Tasks** | Create, Read, Update, Delete tasks |
+| **Notes** | Create, Read, Update, Delete notes |
+| **Todos** | Create, Read, Update, Delete todos |
+| **Calendar** | View tasks and events in calendar |
+| **User Interface** | Dark Mode, Responsive Design, Profile Management |
 
-  Installation Commands
-  ```bash
-  npm create vite@latest my-app
-  cd my-app
-  npm install
-  npm run dev
-  ```
-  Common Commands
-  ```bash
-  npm run dev     # Start development server
-  npm run build   # Build for production
-  npm run preview # Preview production build locally
-  ```
+---
 
-### ***Node js***
-  Node.js info and docs...
-  [Node JS Documentation](https://nodejs.org/docs/latest/api/synopsis.html)
+## 🛠️ Tech Stack
+Frontend: React.js | React Router | CSS3 | Vercel
+Backend: Node.js | Express.js | Passport.js | Nodemailer | Render
+Database: MongoDB Atlas
 
-  Installation
-  [Node JS Downlaod Link](https://nodejs.org/en/download)
-  
-  Verify Installation
-  ```bash
-  node -v
-  npm -v
-  ```
-  Common Commands
-  ```bash
-  ```
+text
 
-## **Getting Started**
-  _Sample Getting Started information (briefly explain top level info for devs to get started. Link them to the more in-depth getting started .md file)_
-  
-  For further information on starting development please see the detailed [getting_started.md](docs/getting_started/getting_started.md) file.
+---
 
-## **Key Docs**
-- [Project Overview](docs/project_overview/project_overview.md)
-- [Getting_Started](docs/getting_started/getting_started.md)
-- [Backend](docs/backend/backend.md)
-- [Frontend](docs/frontend/frontend.md)
-- [API](docs/api/api.md)
+## 📸 Screenshots
+
+| Login Page |
+| <img src="images/Login.png" width="1000"> |
+
+ |Dashboard View |
+ <img src="images/Dashboard1.png" width="1000"> |
+
+ | Tasks View |
+  <img src="images/Tasks.png" width="1000"> |
+
+| Notes Page | 
+
+| <img src="images/Notes.png" width="1000"> |
+
+| Dashboard View 2 | 
+ <img src="images/Dashboard2.png" width="1000"> |
+
+ | Features |
+ <img src="images/Login.png" width="1000"> |
+
+
+## 🚀 Quick Start
+
+### Option 1: Use Live App
+Simply visit: **https://mern-stack-task-manager-app.vercel.app**
+
+### Option 2: Run Locally
+
+# 1. Clone the repository
+git clone https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App.git
+cd MERN-Stack-Task-Manager-App
+
+# 2. Setup Backend
+cd BackEnd
+npm install
+
+# 3. Create .env file in BackEnd folder
+Add these variables:
+MONGO_URL=your_mongodb_connection_string
+SESSION_SECRET=your_secret
+JWT_SECRET_KEY=your_jwt_secret
+FRONTEND_DOMAIN=http://localhost:3000
+
+# 4. Start Backend Server
+npm start
+
+# 5. Setup Frontend (Open a new terminal)
+cd FrontEnd
+npm install
+
+# 6. Create .env file in FrontEnd folder
+Add this variable:
+REACT_APP_API_URL=http://localhost:8080
+
+# 7. Start Frontend Server
+npm start
+Access your local app:
+
+Frontend: http://localhost:3000
+
+Backend: http://localhost:8080
+
+
+🔧 Environment Variables
+Backend (.env in BackEnd folder)
+
+MONGO_URL=mongodb+srv://username:password@cluster.mongodb.net/dbname
+SESSION_SECRET=your_random_secret_key_here
+JWT_SECRET_KEY=your_random_jwt_secret_here
+FRONTEND_DOMAIN=http://localhost:3000
+Frontend (.env in FrontEnd folder)
+
+REACT_APP_API_URL=http://localhost:8080
+Production Variables (on Render/Vercel)
+
+# Render (Backend)
+MONGO_URL=your_production_mongodb_url
+SESSION_SECRET=production_secret
+JWT_SECRET_KEY=production_jwt_secret
+FRONTEND_DOMAIN=https://mern-stack-task-manager-app.vercel.app
+
+Vercel (Frontend)
+REACT_APP_API_URL=https://task-manager-backend-wm5h.onrender.com
+
+📞 Contact
+Mamta Gangwar
+
+GitHub: @Mamta-gangwar
+
+Project Link: https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App
+
+⭐ Support
+If you found this project helpful, please give it a star on GitHub!
+
+<p align="center"> <a href="https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App/stargazers"> <img src="https://img.shields.io/github/stars/Mamta-gangwar/MERN-Stack-Task-Manager-App?style=for-the-badge&color=yellow" alt="Stars"> </a> <a href="https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App/network/members"> <img src="https://img.shields.io/github/forks/Mamta-gangwar/MERN-Stack-Task-Manager-App?style=for-the-badge&color=blue" alt="Forks"> </a> </p>
+<p align="center"> Made with ❤️ by Mamta Gangwar <br> Copyright © 2026 </p> 
