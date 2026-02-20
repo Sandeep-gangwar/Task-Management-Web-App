@@ -12,11 +12,13 @@ async function start() {
 
     await connectDB(env.mongoUri);
 
-    const app = createApp({ corsOrigin: env.corsOrigin });
+    // Use corsOrigins array instead of single corsOrigin
+    const app = createApp({ corsOrigin: env.corsOrigins });
 
     server = app.listen(env.port, "0.0.0.0", () => {
       console.log(`🚀 Server running on port ${env.port}`);
       console.log(`📦 Environment: ${env.nodeEnv}`);
+      console.log(`🔓 CORS allowed origins: ${env.corsOrigins.join(', ')}`);
     });
 
     // Graceful shutdown handlers

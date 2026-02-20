@@ -1,6 +1,6 @@
-# MERN Stack Task Manager App
+# Task Management Web App
 
-A full-stack Task Manager application built with MongoDB, Express.js, React, and Node.js. Features user authentication, task management, notes, todos, and calendar integration.
+A full-stack Task Management application built with MongoDB, Express.js, React, and Node.js. Features user authentication, task creation, management, and organization.
 
 ---
 
@@ -11,8 +11,6 @@ A full-stack Task Manager application built with MongoDB, Express.js, React, and
 - [Screenshots](#-screenshots)
 - [Quick Start](#-quick-start)
 - [Project Structure](#-project-structure)
-- [Application Flow](#-application-flow)
-- [API Flowchart](#-api-flowchart)
 - [Environment Variables](#-environment-variables)
 - [Deployment](#-deployment)
 - [Contact](#-contact)
@@ -23,9 +21,9 @@ A full-stack Task Manager application built with MongoDB, Express.js, React, and
 
 | Component | URL | Status |
 |-----------|-----|--------|
-| **Frontend** | [https://mern-stack-task-manager-app.vercel.app](https://mern-stack-task-manager-app.vercel.app) | 🟢 Live |
-| **Backend API** | [https://task-manager-backend-wm5h.onrender.com](https://task-manager-backend-wm5h.onrender.com) | 🟢 Live |
-| **GitHub Repo** | [https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App](https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App) | 📦 Code |
+| **Frontend** | [https://task-management-web-app-puce.vercel.app](https://task-management-web-app-puce.vercel.app) | 🟢 Live |
+| **Backend API** | [https://task-management-backend-q4y1.onrender.com](https://task-management-backend-q4y1.onrender.com) | 🟢 Live |
+| **GitHub Repo** | [https://github.com/Sandeep-gangwar/Task-Management-Web-App](https://github.com/Sandeep-gangwar/Task-Management-Web-App) | 📦 Code |
 
 ---
 
@@ -33,118 +31,131 @@ A full-stack Task Manager application built with MongoDB, Express.js, React, and
 
 | Category | Features |
 |----------|----------|
-| **Authentication** | Local login, Google OAuth, Facebook OAuth, Password Reset |
+| **Authentication** | User Registration, Login, JWT Authentication |
 | **Tasks** | Create, Read, Update, Delete tasks |
-| **Notes** | Create, Read, Update, Delete notes |
-| **Todos** | Create, Read, Update, Delete todos |
-| **Calendar** | View tasks and events in calendar |
-| **User Interface** | Dark Mode, Responsive Design, Profile Management |
+| **Task Management** | Mark tasks as complete/incomplete, Filter tasks |
+| **User Interface** | Responsive Design, Modern UI, Toast Notifications |
+| **Security** | JWT Tokens, Password Hashing, Rate Limiting, Helmet.js |
 
 ---
 
 ## 🛠️ Tech Stack
-Frontend: React.js | React Router | CSS3 | Vercel
-Backend: Node.js | Express.js | Passport.js | Nodemailer | Render
-Database: MongoDB Atlas
 
-text
+| Layer | Technologies |
+|-------|-------------|
+| **Frontend** | React.js, Vite, React Router, Axios, CSS Modules |
+| **Backend** | Node.js, Express.js, JWT, bcrypt, Nodemon |
+| **Database** | MongoDB Atlas, Mongoose ODM |
+| **Deployment** | Vercel (Frontend), Render (Backend), GitHub |
 
 ---
 
 ## 📸 Screenshots
 
+| Signup Page |
+|------------|
+| <img src="screenshots/login.png" width="1000"> |
+
 | Login Page |
-| <img src="images/Login.png" width="1000"> |
+|----------------|
+| <img src="screenshots/dashboard.png" width="1000"> |
 
- |Dashboard View |
- <img src="images/Dashboard1.png" width="1000"> |
+| Dashboard |
+|------------|
+| <img src="screenshots/tasks.png" width="1000"> |
 
- | Tasks View |
-  <img src="images/Tasks.png" width="1000"> |
+| Create Task |
+|-------------|
+| <img src="screenshots/create-task.png" width="1000"> |
 
-| Notes Page | 
+*Note: Add your screenshots in a `screenshots` folder and update the paths above*
 
-| <img src="images/Notes.png" width="1000"> |
-
-| Dashboard View 2 | 
- <img src="images/Dashboard2.png" width="1000"> |
-
- | Features |
- <img src="images/Login.png" width="1000"> |
-
+---
 
 ## 🚀 Quick Start
 
 ### Option 1: Use Live App
-Simply visit: **https://mern-stack-task-manager-app.vercel.app**
+Simply visit: **https://task-management-web-app-puce.vercel.app**
 
 ### Option 2: Run Locally
 
 # 1. Clone the repository
-git clone https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App.git
-cd MERN-Stack-Task-Manager-App
+git clone https://github.com/Sandeep-gangwar/Task-Management-Web-App.git
+cd Task-Management-Web-App
 
 # 2. Setup Backend
-cd BackEnd
+cd backend
 npm install
 
-# 3. Create .env file in BackEnd folder
-Add these variables:
-MONGO_URL=your_mongodb_connection_string
-SESSION_SECRET=your_secret
-JWT_SECRET_KEY=your_jwt_secret
-FRONTEND_DOMAIN=http://localhost:3000
+# 3. Create .env file in backend folder
+# Add these variables (see Environment Variables section below)
 
 # 4. Start Backend Server
-npm start
+npm run dev
 
 # 5. Setup Frontend (Open a new terminal)
-cd FrontEnd
+cd frontend
 npm install
 
-# 6. Create .env file in FrontEnd folder
-Add this variable:
-REACT_APP_API_URL=http://localhost:8080
+# 6. Create .env file in frontend folder
+# Add this variable: VITE_API_URL=http://localhost:5000/api
 
 # 7. Start Frontend Server
-npm start
+npm run dev
+
 Access your local app:
 
-Frontend: http://localhost:3000
+Frontend: http://localhost:5173
+Backend: http://localhost:5000
 
-Backend: http://localhost:8080
+#🔧 Environment Variables
+
+Backend (.env in backend folder)
+
+PORT=5000
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/taskmanager
+JWT_SECRET=your_random_jwt_secret_key_here
+NODE_ENV=development
+CORS_ORIGIN=http://localhost:5173
 
 
-🔧 Environment Variables
-Backend (.env in BackEnd folder)
+Frontend (.env in frontend folder)
 
-MONGO_URL=mongodb+srv://username:password@cluster.mongodb.net/dbname
-SESSION_SECRET=your_random_secret_key_here
-JWT_SECRET_KEY=your_random_jwt_secret_here
-FRONTEND_DOMAIN=http://localhost:3000
-Frontend (.env in FrontEnd folder)
+VITE_API_URL=http://localhost:5000/api
+Production Variables
+Render (Backend)
 
-REACT_APP_API_URL=http://localhost:8080
-Production Variables (on Render/Vercel)
-
-# Render (Backend)
-MONGO_URL=your_production_mongodb_url
-SESSION_SECRET=production_secret
-JWT_SECRET_KEY=production_jwt_secret
-FRONTEND_DOMAIN=https://mern-stack-task-manager-app.vercel.app
-
+MONGODB_URI=your_production_mongodb_url
+JWT_SECRET=your_production_jwt_secret
+NODE_ENV=production
+CORS_ORIGIN=http://localhost:5173,https://task-management-web-app-puce.vercel.app
 Vercel (Frontend)
-REACT_APP_API_URL=https://task-manager-backend-wm5h.onrender.com
+
+VITE_API_URL=https://task-management-backend-q4y1.onrender.com/api
+
+🚢 Deployment
+
+Backend (Render)
+Push code to GitHub
+Connect repository to Render
+Set root directory: backend
+Add environment variables
+Deploy
+
+Frontend (Vercel)
+Connect GitHub repository to Vercel
+Set root directory: frontend
+Add environment variable: VITE_API_URL
+Deploy
 
 📞 Contact
-Mamta Gangwar
+Sandeep Gangwar
 
-GitHub: @Mamta-gangwar
+GitHub: @Sandeep-gangwar
 
-Project Link: https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App
+Project Link: https://github.com/Sandeep-gangwar/Task-Management-Web-App
 
 ⭐ Support
 If you found this project helpful, please give it a star on GitHub!
 
-<p align="center"> <a href="https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App/stargazers"> <img src="https://img.shields.io/github/stars/Mamta-gangwar/MERN-Stack-Task-Manager-App?style=for-the-badge&color=yellow" alt="Stars"> </a> <a href="https://github.com/Mamta-gangwar/MERN-Stack-Task-Manager-App/network/members"> <img src="https://img.shields.io/github/forks/Mamta-gangwar/MERN-Stack-Task-Manager-App?style=for-the-badge&color=blue" alt="Forks"> </a> </p>
-<p align="center"> Made with ❤️ by Mamta Gangwar <br> Copyright © 2026 </p> 
+<p align="center"> <a href="https://github.com/Sandeep-gangwar/Task-Management-Web-App/stargazers"> <img src="https://img.shields.io/github/stars/Sandeep-gangwar/Task-Management-Web-App?style=for-the-badge&color=yellow" alt="Stars"> </a> <a href="https://github.com/Sandeep-gangwar/Task-Management-Web-App/network/members"> <img src="https://img.shields.io/github/forks/Sandeep-gangwar/Task-Management-Web-App?style=for-the-badge&color=blue" alt="Forks"> </a> </p><p align="center"> Made with ❤️ by Sandeep Gangwar <br> Copyright © 2026 </p> 
